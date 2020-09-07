@@ -1,5 +1,5 @@
 import { gameLoader } from './imageLoader.js';
-import { elementCreator, flagFirstMouseDownUpdate } from './elementCreator.js';
+import { elementCreator, flagFirstMouseDownUpdate, music } from './elementCreator.js';
 import { 
   changeCharacterFrame, 
   moveBackgroundCharacters, 
@@ -17,7 +17,7 @@ const GamePlayManager = {
     init: function() {
       game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
       game.scale.pageAlignHorizontally = true;
-      game.scale.pageAlignVertically = true;        
+      game.scale.pageAlignVertically = true;               
     },
     preload: function() {
       gameLoader(game)
@@ -26,13 +26,14 @@ const GamePlayManager = {
       elementCreator(game, soulCounter, flagFirstMouseDown)
       gameTimer(game)
       game.input.onDown.add(changeVolume, this);
+      music.play();   
     },
     update: function() {
         if(flagFirstMouseDownUpdate && !endGameUpdate){
           changeCharacterFrame()
           moveBackgroundCharacters()
           changeCharacterPosition(game)  
-          onTargetCatch(game, soulCounter)          
+          onTargetCatch(game, soulCounter)
         }
         
     }

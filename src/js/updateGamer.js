@@ -83,7 +83,7 @@ const endGame = (byTime, game) => {
   tweenSpider.stop();
   tweenSpiderLeft.stop();
   if (!byTime) {
-    showFinalMessage(game, 'CONGRATULATIONS');
+    showFinalMessage(game, '¡Bien hecho!');
   } else {
     showFinalMessage(game, 'GAME OVER');
   }
@@ -119,9 +119,9 @@ const changeCharacterPosition = (game) => {
   let distY = pointerY - ghost.y;
 
   if( distX > 0 ){
-    ghost.scale.setTo(1,1);
+    ghost.scale.setTo(0.8,0.8);
   }else{
-    ghost.scale.setTo(-1,1);
+    ghost.scale.setTo(-0.8,0.8);
   }
 
   ghost.x += distX * 0.02;

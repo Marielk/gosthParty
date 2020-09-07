@@ -42,11 +42,12 @@ const elementCreator = (game, soulCounter, flagFirstMouseDown) => {
   // muestra el puntaje y el tiempo 
   addTextToScreen(game)
   music = game.add.audio('boden');
-  music.play();
+  
 }
 
 const createGhost = (game) => {
   ghost = game.add.sprite(0,0,'ghost');
+  ghost.scale.setTo(0.8, 0.8)
   ghost.frame = 0;
   ghost.x = game.width/2;
   ghost.y = game.height/2;
