@@ -26,7 +26,7 @@ const GamePlayManager = {
       elementCreator(game, soulCounter, flagFirstMouseDown)
       gameTimer(game)
       game.input.onDown.add(changeVolume, this);
-      music.play();   
+      // music.play();   
     },
     update: function() {
         if(flagFirstMouseDownUpdate && !endGameUpdate){

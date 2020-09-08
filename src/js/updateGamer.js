@@ -47,7 +47,7 @@ const changeVolume = (pointer) => {
 }
 
 const gameTimer = (game) => {
-  
+  music.play();
   timerGameOver = game.time.events.loop(Phaser.Timer.SECOND, function(){
     if(flagFirstMouseDownUpdate){
         totalTime--;
